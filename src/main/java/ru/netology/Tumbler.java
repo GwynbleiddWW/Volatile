@@ -1,13 +1,13 @@
 package ru.netology;
 
 public class Tumbler {
-    private volatile boolean boxClosed;
+    private volatile boolean turnOn;
 
-    public boolean getBoxClosed() {
-        return boxClosed;
+    public boolean isTurnOn() {
+        return turnOn;
     }
 
-    public void setBoxClosed(boolean boxClosed) {
-        this.boxClosed = boxClosed;
+    public void setTurnOn(boolean turnOn) {
+        this.turnOn = turnOn;
     }
 }
