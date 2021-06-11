@@ -1,22 +1,23 @@
 package ru.netology;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         final int sleepTimeout = 3000;
         Tumbler tumbler = new Tumbler();
-        final int counter = 5;
+        final int counter = 10;
 
         new MyThread(tumbler) {
             public void run() {
-                tumbler.setTurnOn(false);
-                if (!tumbler.isTurnOn()) {
-                    for (int i = 0; i < counter; i++) {
-                        System.out.println("Хочу открыть коробку! Включаю тумблер! ");
-                        try {
-                            Thread.sleep(sleepTimeout);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                int i = 0;
+                while (i<counter) {
+                    System.out.println("Хочу открыть коробку! Включаю тумблер! ");
+                    i++;
+                    try {
+                        Thread.sleep(sleepTimeout);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -24,8 +25,7 @@ public class Main {
 
         new MyThread(tumbler) {
             public void run() {
-                tumbler.setTurnOn(true);
-                if (tumbler.isTurnOn()) {
+                while (tumbler.isTurnOn()) {
                     System.out.println("Коробка открылась, закрываю!");
                     try {
                         Thread.sleep(sleepTimeout);
@@ -35,5 +35,10 @@ public class Main {
                 }
             }
         }.start();
+
+
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+        tumbler.shutdown();
     }
 }
