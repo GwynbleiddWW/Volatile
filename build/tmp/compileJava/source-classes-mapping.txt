@@ -2,7 +2,9 @@ ru/netology/Tumbler.java
  ru.netology.Tumbler
 ru/netology/MyThread.java
  ru.netology.MyThread
+ru/netology/Box.java
+ ru.netology.Box
 ru/netology/Main.java
  ru.netology.Main
- ru.netology.Main$1
- ru.netology.Main$2
+ru/netology/User.java
+ ru.netology.User

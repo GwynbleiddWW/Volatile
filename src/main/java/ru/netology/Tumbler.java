@@ -1,3 +1,4 @@
+
 package ru.netology;
 
 public class Tumbler {
@@ -6,8 +7,8 @@ public class Tumbler {
     public boolean isTurnOn() {
         return turnOn;
     }
-    public void shutdown(){
+
+    public void shutdown() {
         this.turnOn = false;
     }
-
 }
