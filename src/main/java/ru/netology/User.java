@@ -6,16 +6,14 @@ public class User extends Box {
     }
 
     public void run() {
-        int i = 0;
-        while (i < 10) {
+        while (tumbler.close()) {
             System.out.println("Хочу открыть коробку! Включаю тумблер! ");
-            i++;
+            tumbler.isTurnOn();
             try {
                 Thread.sleep(sleepTimeout);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        tumbler.shutdown();
     }
 }
