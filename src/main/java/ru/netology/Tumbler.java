@@ -2,13 +2,13 @@
 package ru.netology;
 
 public class Tumbler {
-    private volatile boolean turnOn;
+    private volatile boolean tumblerPosition;
 
-    public boolean isTurnOn(){
-        return turnOn;
+    public boolean turnOn(){
+        return tumblerPosition = true;
     }
 
-    public boolean close(){
-        return turnOn = false;
+    public boolean turnOff(){
+        return tumblerPosition = false;
     }
 }

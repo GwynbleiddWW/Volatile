@@ -7,7 +7,7 @@ public class Main {
 
         MyThread user = new User(tumbler);
         MyThread box = new Box(tumbler);
-        box.start();
         user.start();
+        box.start();
     }
 }
