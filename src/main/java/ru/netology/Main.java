@@ -8,6 +8,8 @@ public class Main {
         MyThread user = new User(tumbler);
         MyThread box = new Box(tumbler);
         user.start();
+        box.setDaemon(true);
         box.start();
+        user.join();
     }
 }

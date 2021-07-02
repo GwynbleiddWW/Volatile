@@ -6,13 +6,15 @@ public class Box extends MyThread {
     }
 
     public void run() {
-        while (tumbler.turnOn()) {
-            tumbler.turnOff();
-            System.out.println("Коробка открылась, закрываю!");
-            try {
-                Thread.sleep(sleepTimeout);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        if (tumbler.turnOn()) {
+            while (true) {
+                System.out.println("Коробка открылась, закрываю!");
+                tumbler.turnOff();
+                try {
+                    Thread.sleep(sleepTimeout);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
